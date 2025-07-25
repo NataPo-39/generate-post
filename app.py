@@ -56,7 +56,7 @@ async def generate_content(topic: str):
         title_response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt_title}],
-            max_tokens=60,
+            max_tokens=20,
             temperature=0.5,
         )
         title = title_response.choices[0].message.content.strip()
@@ -70,7 +70,7 @@ async def generate_content(topic: str):
         meta_response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt_meta}],
-            max_tokens=120,
+            max_tokens=30,
             temperature=0.5,
         )
         meta_description = meta_response.choices[0].message.content.strip()
